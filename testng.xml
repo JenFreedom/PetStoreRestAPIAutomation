@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PetSoreUserSuite">
+  
+  <listeners>
+  	<listener class-name="api.utilities.ExtentReportManager" />
+  </listeners>
+  
+  <test thread-count="5" name="UserModelTests">
+    <classes>
+      <class name="api.test.userTests_logs2"/>
+  <!--  <class name="api.test.userTests_logs"/>  -->
+      
+  <!-- <class name="api.test.userTests"/>  -->
+  <!--  <class name="api.test.DDTests"/>  -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- UserSuite -->
