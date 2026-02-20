@@ -2,57 +2,63 @@ package api.endpoints;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.ResourceBundle;
+
 import api.payload.User;
+import api.utilities.Routes;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 
 // Created to perform CRUD flow - Create, Read, Update, Delete request
 
 public class UserEndPoints {
-
-	public static Response createUser(User payload) {
-		
-		Response response = given()
-			.contentType(ContentType.JSON)
-			.accept(ContentType.JSON)
+//	protected static String baseURL;
+	
+	// method to get URL from properties file
+	static ResourceBundle getURL(){
+		ResourceBundle routes = ResourceBundle.getBundle("routes"); // load the properties file (routes - property filename)
+		return routes;
+	}
+	
+	
+	public static Response createUser(User payload, RequestSpecification reqSpec) {
+		Response response = given(reqSpec)
 			.body(payload)
 		.when()
-			.post(Routes.post_url);
+			.post(Routes.POST_URL);
 		
 		return response;
 	}
 	
-	public static Response readUser(String userName) {
+	public static Response readUser(String userName,RequestSpecification reqSpec) {
 		
-		Response response = given()
+		Response response = given(reqSpec)
 			.pathParam("username", userName)
 		.when()
-			.get(Routes.get_url);
+			.get(Routes.GET_URL);
 		
 		return response;
 	}
 
-	public static Response updateUser(String userName, User payload) {
+	public static Response updateUser(String userName, User payload,RequestSpecification reqSpec) {
 		
-		Response response = given()
-			.contentType(ContentType.JSON)
-			.accept(ContentType.JSON)
+		Response response = given(reqSpec)
 			.body(payload)
 			.pathParam("username", userName)
 		.when()
-			.put(Routes.update_url);
+			.put(Routes.UPDATE_URL);
 		
 		return response;
 	}
 	
-	public static Response deleteUser(String userName) {
-		
-		Response response = given()
+	public static Response deleteUser(String userName,RequestSpecification reqSpec) {
+		Response response = given(reqSpec)
 			.pathParam("username", userName)
 			
 		.when()
-			.delete(Routes.delete_url);
+			.delete(Routes.DELETE_URL);
 		
 		return response;
 	}

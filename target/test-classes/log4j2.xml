@@ -2,28 +2,54 @@
 
 <Configuration status="WARN"> 
 
-<Properties>
+	<Properties>
 		<Property name="basePath">./logs</Property>
 	</Properties>
 
 
-  <Appenders>
-    <Console name="Console" target="SYSTEM_OUT">
-      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-    </Console>
-    
-      <RollingFile name="File" fileName="${basePath}/automation.log" filePattern="${basePath}/automation-%d{yyyy-MM-dd}.log">
-     <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-      <SizeBasedTriggeringPolicy size="50000" />
-   </RollingFile>
-    
-    
-  </Appenders>
+	  <Appenders>
+	   <Console name="Console" target="SYSTEM_OUT">
+	      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+	   </Console>
+	    
+	   <RollingFile name="File" fileName="${basePath}/automation.log" filePattern="${basePath}/automation-%d{yyyy-MM-dd}.log">
+	     <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+	    <Policies>
+	        <!-- Creates new file on every app start -->
+	        <OnStartupTriggeringPolicy/>
+	        <!-- Also rolls over daily -->
+	        <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+	        <!-- Also rolls when size exceeds 5MB -->
+	        <SizeBasedTriggeringPolicy size="5MB"/>
+    	</Policies>
+	   </RollingFile>
+	  </Appenders>
   
   <Loggers>
-    <Root level="debug"><!-- Here you can use multiple log levels All < Trace < Debug < Info < Warn < Error < Fatal < Off -->
-      <AppenderRef ref="File"/>  <!-- <AppenderRef ref="Console"/> -->
-    </Root>
+  	  <!-- Suppress Apache POI debug logs -->
+      <Logger name="org.apache.poi" level="WARN" additivity="false">
+          <AppenderRef ref="File"/>
+          <AppenderRef ref="Console"/>
+      </Logger>
+	
+	<!-- Suppress openxml4j specifically -->
+    <Logger name="org.apache.poi.openxml4j.opc" level="WARN" additivity="false">
+        <AppenderRef ref="File"/>
+        <AppenderRef ref="Console"/>
+    </Logger>
+    
+      <!-- Your framework logs — INFO level -->
+        <Logger name="api" level="INFO" additivity="false">
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <!-- Root logger — WARN to suppress everything else -->
+        <Root level="WARN">
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
+        </Root>  	
+  	
   </Loggers>
   
 </Configuration>

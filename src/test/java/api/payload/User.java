@@ -1,15 +1,32 @@
 package api.payload;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User {
 
-	int id;
-	String username;
-	String firstName;
-	String lastName;
-	String email;
-	String password;
-	String phone;
-	int userStatus=0;
+	@JsonProperty("id")
+	private int id;
+	
+	@JsonProperty("username")
+	private String username;
+	
+	@JsonProperty("firstName")
+	private String firstName;
+	
+	@JsonProperty("lastName")
+	private String lastName;
+	
+	@JsonProperty("email")
+	private String email;
+	
+	@JsonProperty("password")
+	private String password;
+	
+	@JsonProperty("phone")
+	private String phone;
+	
+	@JsonProperty("userStatus")
+	private int userStatus=0;
 	  
 	  
 	public int getId() {
@@ -60,6 +77,19 @@ public class User {
 	public void setUserStatus(int userStatus) {
 		this.userStatus = userStatus;
 	}
-
+	
+	//toString for easy logging
+	@Override
+	public String toString() {
+		return "User {" +
+                "id="         + id          +
+                ", username='" + username   + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='"  + lastName  + '\'' +
+                ", email='"     + email     + '\'' +
+                ", phone='"     + phone     + '\'' +
+                ", userStatus=" + userStatus +
+                '}'; 
+	}
 	  
 }

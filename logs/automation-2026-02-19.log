@@ -1,0 +1,22 @@
+13:54:57.733 [main] INFO  api.utilities.ExtentReportManager - Extent Report started: C:\Users\sjshe\eclipse-workspace\DigitaProducts\PetStoreAPIAutomation\reports\Test-Report-2026.02.19.13.54.57.html
+13:54:57.755 [main] INFO  api.test.UserTests - *********Initializing test setup*******
+13:54:57.929 [main] INFO  api.test.UserTests - Test Data initialized successfully: User {id=936219350, username='phyliss.wolf', firstName='Gregg', lastName='Wolf', email='young.davis@example.com', phone='1-659-921-4521', userStatus=0}
+13:54:58.444 [main] INFO  api.test.UserTests - BaseURL : https://petstore.swagger.io/v2
+13:54:58.455 [main] INFO  api.test.UserTests - ********** Set up Complete **********
+13:54:58.475 [main] INFO  api.utilities.ExtentReportManager - Test Started testPostUser
+13:54:58.475 [main] INFO  api.test.UserTests - ********* Creating User *********
+13:55:00.246 [main] INFO  api.test.UserTests - *********User Created *********
+13:55:00.253 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testPostUser
+13:55:00.256 [main] INFO  api.utilities.ExtentReportManager - Test Started testGetUserByName
+13:55:00.256 [main] INFO  api.test.UserTests - *********Reading User Info *********
+13:55:00.496 [main] INFO  api.test.UserTests - User Info displayed
+13:55:00.496 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testGetUserByName
+13:55:00.498 [main] INFO  api.utilities.ExtentReportManager - Test Started testUpdateUserByName
+13:55:00.498 [main] INFO  api.test.UserTests - Update User
+13:55:00.868 [main] INFO  api.test.UserTests - ********* User Updated (status verified only) *********
+13:55:00.869 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testUpdateUserByName
+13:55:00.871 [main] INFO  api.utilities.ExtentReportManager - Test Started testDeleteUserByName
+13:55:00.871 [main] INFO  api.test.UserTests - Deleting User
+13:55:01.205 [main] INFO  api.test.UserTests - ********* Deletion Verified *********
+13:55:01.206 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testDeleteUserByName
+13:55:01.446 [main] INFO  api.utilities.ExtentReportManager - Extent Report save:  C:\Users\sjshe\eclipse-workspace\DigitaProducts\PetStoreAPIAutomation\reports\Test-Report-2026.02.19.13.54.57.html

@@ -6,12 +6,13 @@
   </listeners>
   <test thread-count="5" name="UserModelTests(failed)">
     <classes>
-      <class name="api.test.userTests_logs2">
+      <class name="api.test.DDTests">
         <methods>
-          <include name="testDeleteUserByName"/>
-          <include name="setupData"/>
+          <include name="testdeleteUserByName"/>
+          <include name="testPostUser"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- api.test.userTests_logs2 -->
+      </class> <!-- api.test.DDTests -->
     </classes>
   </test> <!-- UserModelTests(failed) -->
 </suite> <!-- Failed suite [PetSoreUserSuite] -->

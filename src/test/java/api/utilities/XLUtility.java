@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FillPatternType;
@@ -17,44 +19,47 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLUtility {
 	
-	public FileInputStream fi;
+	private static final Logger logger = LogManager.getLogger(XLUtility.class);
+//	public FileInputStream fi;
 	public FileOutputStream fo;
-	public XSSFWorkbook workbook;
-	public XSSFSheet sheet;
-	public XSSFRow row;
-	public XSSFCell cell;
-	public CellStyle style;
-	String path;
+	
+//	public XSSFSheet sheet;
+//	public XSSFRow row;
+//	public XSSFCell cell;
+//	public CellStyle style;
+	private final String path;
 	
 	public XLUtility(String path) {
 		this.path = path;
 	}
 	
+	// Opens workbook — caller is responsible for closing
+    private XSSFWorkbook openWorkbook(FileInputStream fi) throws IOException {
+        return new XSSFWorkbook(fi);
+    }
+    
 	public int getRowCount(String sheetName) throws IOException {
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		int rowcount = sheet.getLastRowNum();
-		workbook.close();
-		fi.close();
-		return rowcount;
+		FileInputStream fi = new FileInputStream(path);
+		XSSFWorkbook workbook = openWorkbook(fi); 
+		int rowCount = workbook.getSheet(sheetName).getLastRowNum();
+		logger.info("Row Count in sheet ["+ sheetName+"]:" +rowCount);
+		return rowCount;
 	}
+	
 	public int getCellCount(String sheetName, int rownum) throws IOException {
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		int cellcount = row.getLastCellNum();
-		workbook.close();
-		fi.close();
-		return cellcount;
+		FileInputStream fi = new FileInputStream(path);
+		XSSFWorkbook workbook = openWorkbook(fi);
+		XSSFRow row = workbook.getSheet(sheetName).getRow(rownum);
+		int cellCount = row.getLastCellNum();
+		logger.info("Cell count in row ["+ rownum+ "]" + cellCount);
+		return cellCount;
 	}
+
 	public String getCellData(String sheetName, int rownum, int colnum) throws IOException {
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		cell = row.getCell(colnum);
+		FileInputStream fi = new FileInputStream(path);
+		XSSFWorkbook workbook = openWorkbook(fi);
+		XSSFRow row = workbook.getSheet(sheetName).getRow(rownum);
+		XSSFCell cell = row.getCell(colnum);
 		String data;
 		
 		try {
@@ -62,75 +67,62 @@ public class XLUtility {
 			data = formatter.formatCellValue(cell);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			logger.warn("Empty or null cell at row " + rownum + ",col" + colnum);
 			data = "";
 		}
-		workbook.close();
-		fi.close();
+
 		return data;
 	}
 	public void setCellData(String sheetName, int rownum, int colnum,String data) throws IOException {
+		// Create File if it dosn't exist
 		File xlfile = new File(path);
 		if(!xlfile.exists()) { // if the file does not exists create new file
-			workbook = new XSSFWorkbook();
-			fo= new FileOutputStream(path);
+			XSSFWorkbook workbook = new XSSFWorkbook();
+			FileOutputStream fo= new FileOutputStream(path);
 			workbook.write(fo);
+			logger.info("Created new Excel file at :" +path);
 		}
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
+		FileInputStream fi = new FileInputStream(path);
+		XSSFWorkbook workbook = openWorkbook(fi);
 		
 		if(workbook.getSheetIndex(sheetName)==-1)
 			workbook.createSheet(sheetName);
-		sheet = workbook.getSheet(sheetName);
+		
+		XSSFSheet sheet = workbook.getSheet(sheetName);
 		
 		if(sheet.getRow(rownum)==null)
 			sheet.createRow(rownum);
-		row = sheet.getRow(rownum);
 		
-		cell = row.createCell(colnum);
+		XSSFRow row = sheet.getRow(rownum);
+		
+		XSSFCell cell = row.createCell(colnum);
 		cell.setCellValue(data);
-		fo = new FileOutputStream(path);
+		FileOutputStream fo = new FileOutputStream(path);
 		workbook.write(fo);
-		workbook.close();
-		fi.close();
-		fo.close();
+		logger.info("data written to [" + sheetName+ "] row:" + rownum + " col:"+ colnum);
+
+	}
+	
+	// shared color fill method 
+	private void fillcolor(String sheetName, int rownum, int colnum, IndexedColors color) throws IOException {
+		FileInputStream fi = new FileInputStream(path);
+		XSSFWorkbook workbook = openWorkbook(fi);
+		
+		CellStyle style = workbook.createCellStyle();
+		style.setFillForegroundColor(color.getIndex());
+		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		
+		workbook.getSheet(sheetName).getRow(rownum).getCell(colnum).setCellStyle(style);
+		
+		FileOutputStream fo = new FileOutputStream(path);
+		workbook.write(fo);
+		logger.info("Filled " + color.name() + " color at row:" + rownum+ " col:"+colnum);
 	}
 	public void fillGreenColor(String sheetName, int rownum,int colnum) throws IOException {
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		cell = row.getCell(colnum);
-		
-		style = workbook.createCellStyle();
-		
-		style.setFillForegroundColor(IndexedColors.GREEN.getIndex());
-		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-		
-		cell.setCellStyle(style);
-	//	fo= new FileOutputStream(path);
-		workbook.write(fo);
-		workbook.close();
-		fi.close();
-		fo.close();
+		fillcolor(sheetName, rownum, colnum, IndexedColors.GREEN);
 	}
 	public void fillRedColor(String sheetName, int rownum,int colnum) throws IOException {
-		fi = new FileInputStream(path);
-		workbook = new XSSFWorkbook(fi);
-		sheet = workbook.getSheet(sheetName);
-		row = sheet.getRow(rownum);
-		cell = row.getCell(colnum);
-		
-		style = workbook.createCellStyle();
-		
-		style.setFillForegroundColor(IndexedColors.RED.getIndex());
-		style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-		
-		cell.setCellStyle(style);
-	//	fo= new FileOutputStream(xlfile);
-		workbook.write(fo);
-		workbook.close();
-		fi.close();
-		fo.close();
+		fillcolor(sheetName, rownum, colnum, IndexedColors.RED);
 	}
 
 }

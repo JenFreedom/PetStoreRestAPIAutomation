@@ -1,91 +1,22 @@
-15:40:11.518 [main] INFO  api.test.userTests_logs - *********Post User*********
-15:40:13.186 [main] INFO  api.test.userTests_logs - *********User Created *********
-15:40:13.198 [main] INFO  api.test.userTests_logs - *********Reading User Info *********
-15:40:13.384 [main] INFO  api.test.userTests_logs - *********User Info displayed *********
-15:40:13.388 [main] INFO  api.test.userTests_logs - *********Update User*********
-15:40:13.564 [main] INFO  api.test.userTests_logs - ********* User updated *********
-15:40:13.751 [main] INFO  api.test.userTests_logs - *********Deleting User*********
-15:40:13.929 [main] INFO  api.test.userTests_logs - *********User deleted *********
-10:26:35.436 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:26:35.446 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:26:36.745 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:26:36.789 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:26:36.816 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:27:16.440 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:27:16.450 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:27:17.524 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:27:17.562 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:27:17.584 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:27:17.647 [main] DEBUG api.test.userTests_logs - debugging........
-10:27:17.649 [main] INFO  api.test.userTests_logs - *********Post User*********
-10:27:18.207 [main] INFO  api.test.userTests_logs - *********User Created *********
-10:27:18.210 [main] INFO  api.test.userTests_logs - *********Reading User Info *********
-10:27:18.395 [main] INFO  api.test.userTests_logs - *********User Info displayed *********
-10:27:18.397 [main] INFO  api.test.userTests_logs - *********Update User*********
-10:27:18.574 [main] INFO  api.test.userTests_logs - ********* User updated *********
-10:27:18.761 [main] INFO  api.test.userTests_logs - *********Deleting User*********
-10:27:18.941 [main] INFO  api.test.userTests_logs - *********User deleted *********
-10:32:23.186 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:32:23.196 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:32:24.277 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:32:24.312 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:32:24.330 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:33:14.825 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:33:14.835 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:33:15.898 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:33:15.930 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:33:15.954 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:34:42.517 [main] DEBUG api.test.userTests_logs - debugging........
-10:34:42.528 [main] INFO  api.test.userTests_logs - *********Post User from user test_logs*********
-10:34:44.038 [main] INFO  api.test.userTests_logs - *********User Created *********
-10:34:44.058 [main] INFO  api.test.userTests_logs - *********Reading User Info *********
-10:34:44.304 [main] INFO  api.test.userTests_logs - *********User Info displayed *********
-10:34:44.307 [main] INFO  api.test.userTests_logs - *********Update User*********
-10:34:44.500 [main] INFO  api.test.userTests_logs - ********* User updated *********
-10:34:44.704 [main] INFO  api.test.userTests_logs - *********Deleting User*********
-10:34:44.877 [main] INFO  api.test.userTests_logs - *********User deleted *********
-10:36:21.543 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:36:21.553 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:36:22.638 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:36:22.674 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:36:22.696 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:37:04.176 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:37:04.186 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:37:05.323 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:37:05.362 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:37:05.382 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:39:33.418 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:39:33.428 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:39:34.930 [main] INFO  api.test.userTests_logs2 - *********User Created *********
-10:39:34.943 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:39:35.155 [main] INFO  api.test.userTests_logs2 - *********User Info displayed *********
-10:39:35.158 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:39:35.338 [main] INFO  api.test.userTests_logs2 - ********* User updated *********
-10:39:35.515 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:40:33.047 [main] DEBUG api.test.userTests_logs2 - debugging........
-10:40:33.057 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-10:40:34.530 [main] INFO  api.test.userTests_logs2 - *********User Created *********
-10:40:34.546 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-10:40:34.751 [main] INFO  api.test.userTests_logs2 - *********User Info displayed *********
-10:40:34.755 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-10:40:34.923 [main] INFO  api.test.userTests_logs2 - ********* User updated *********
-10:40:35.110 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-10:40:35.286 [main] INFO  api.test.userTests_logs2 - *********User deleted *********
-12:53:59.022 [main] DEBUG api.test.userTests_logs2 - debugging........
-12:53:59.030 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-12:54:00.793 [main] INFO  api.test.userTests_logs2 - *********User Created *********
-12:54:00.803 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-12:54:01.063 [main] INFO  api.test.userTests_logs2 - *********User Info displayed *********
-12:54:01.065 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-12:54:01.280 [main] INFO  api.test.userTests_logs2 - ********* User updated *********
-12:54:01.470 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-12:54:01.695 [main] INFO  api.test.userTests_logs2 - *********User deleted *********
-11:17:38.734 [main] DEBUG api.test.userTests_logs2 - debugging........
-11:17:38.743 [main] INFO  api.test.userTests_logs2 - *********Post User*********
-11:17:40.962 [main] INFO  api.test.userTests_logs2 - *********User Created *********
-11:17:40.974 [main] INFO  api.test.userTests_logs2 - *********Reading User Info *********
-11:17:41.177 [main] INFO  api.test.userTests_logs2 - *********User Info displayed *********
-11:17:41.178 [main] INFO  api.test.userTests_logs2 - *********Update User*********
-11:17:41.397 [main] INFO  api.test.userTests_logs2 - ********* User updated *********
-11:17:41.611 [main] INFO  api.test.userTests_logs2 - *********Deleting User*********
-11:17:41.791 [main] INFO  api.test.userTests_logs2 - *********User deleted *********
+13:58:29.424 [main] INFO  api.utilities.ExtentReportManager - Extent Report started: C:\Users\sjshe\eclipse-workspace\DigitaProducts\PetStoreAPIAutomation\reports\Test-Report-2026.02.19.13.58.29.html
+13:58:29.448 [main] INFO  api.test.UserTests - *********Initializing test setup*******
+13:58:29.599 [main] INFO  api.test.UserTests - Test Data initialized successfully: User {id=1906947271, username='arthur.gulgowski', firstName='Kerrie', lastName='Pfannerstill', email='milton.frami@example.com', phone='865-604-7823', userStatus=0}
+13:58:30.019 [main] INFO  api.test.UserTests - BaseURL : https://petstore.swagger.io/v2
+13:58:30.031 [main] INFO  api.test.UserTests - ********** Set up Complete **********
+13:58:30.046 [main] INFO  api.utilities.ExtentReportManager - Test Started testPostUser
+13:58:30.047 [main] INFO  api.test.UserTests - ********* Creating User *********
+13:58:32.174 [main] INFO  api.test.UserTests - *********User Created *********
+13:58:32.183 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testPostUser
+13:58:32.187 [main] INFO  api.utilities.ExtentReportManager - Test Started testGetUserByName
+13:58:32.188 [main] INFO  api.test.UserTests - *********Reading User Info *********
+13:58:32.439 [main] INFO  api.test.UserTests - User Info displayed
+13:58:32.440 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testGetUserByName
+13:58:32.442 [main] INFO  api.utilities.ExtentReportManager - Test Started testUpdateUserByName
+13:58:32.442 [main] INFO  api.test.UserTests - Update User
+13:58:32.870 [main] INFO  api.test.UserTests - ********* User Updated (status verified only) *********
+13:58:32.870 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testUpdateUserByName
+13:58:32.871 [main] INFO  api.utilities.ExtentReportManager - Test Started testDeleteUserByName
+13:58:32.871 [main] INFO  api.test.UserTests - Deleting User
+13:58:33.244 [main] INFO  api.test.UserTests - ********* Deletion Verified *********
+13:58:33.245 [main] INFO  api.utilities.ExtentReportManager - TestPassed: testDeleteUserByName
+13:58:33.473 [main] INFO  api.utilities.ExtentReportManager - Extent Report save:  C:\Users\sjshe\eclipse-workspace\DigitaProducts\PetStoreAPIAutomation\reports\Test-Report-2026.02.19.13.58.29.html
