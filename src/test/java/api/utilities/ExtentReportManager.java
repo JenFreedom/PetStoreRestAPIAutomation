@@ -137,7 +137,7 @@ public class ExtentReportManager implements ITestListener {
 			email.setDataSourceResolver(new DataSourceUrlResolver(url));
 			email.setHostName("smtp.googlemail.com");
 			email.setSmtpPort(465);
-			email.setAuthenticator(new DefaultAuthenticator("Jenifersheila26@gmail.com","AWSlearner26"));
+			email.setAuthenticator(new DefaultAuthenticator("Jenifersheila26@gmail.com",""));
 			email.setSSLOnConnect(true);
 			email.setFrom("Jenifersheila26@gmail.com");
 			email.setSubject("Test Results");
